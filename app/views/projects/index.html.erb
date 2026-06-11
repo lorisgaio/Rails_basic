@@ -140,7 +140,7 @@
         <div class="project-card">
           <div>
             <h3 class="project-title"><%= project.name %></h3>
-            <span class="project-date">Created on <%= project.created_at.strftime("%B %d, %Y") %></span>
+            <span class="project-date">Created on <%= project.created_at.strftime("%d de %B de %Y") %></span>
           </div>
           
           <div class="card-actions">
@@ -156,4 +156,5 @@
       <p>No projects found. Create your first project to get started!</p>
     </div>
   <% end %>
+  <%= link_to "Back to Todos", todos_path, class: 'btn-sm btn-outline' %>
 </div>
