@@ -131,7 +131,7 @@
   <div class="projects-header">
     <h1>Projects</h1>
     <%# Link to new project can go here %>
-    <a href="#" class="btn-primary">+ New Project</a>
+    <%= link_to 'New Project', new_project_path, class: 'btn-primary'%>
   </div>
 
   <% if @projects.any? %>
@@ -157,4 +157,5 @@
     </div>
   <% end %>
   <%= link_to "Back to Todos", todos_path, class: 'btn-sm btn-outline' %>
+  <%= link_to "Back to Projects", projects_path %>
 </div>

@@ -1,3 +1,4 @@
 <h1>Projeto: <%= @project.name %></h1>
-<p>Project details coming soon...</p>
 <span class="project-date">Created on <%= @project.created_at.strftime("%d de %B de %Y") %></span>
+<%= link_to "Back to Projects", projects_path, class: 'btn-sm btn-outline' %>
+<%= button_to "Delete Project", project_path(@project), method: :delete, data: { confirm: "Are you sure?" } %>
