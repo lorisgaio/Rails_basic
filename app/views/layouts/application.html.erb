@@ -23,9 +23,24 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-[#FAF5E6] min-h-screen">
+    <header class="border-b border-stone-200/60 bg-[#FAF5E6]">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex h-14 items-center justify-between">
+          <div class="flex-shrink-0">
+            <%= link_to "Doable", root_path, class: "text-xl font-bold tracking-tight text-indigo-700" %>
+          </div>
+          <nav class="flex space-x-6">
+            <%= link_to "Projects", projects_path, class: "text-sm font-medium text-gray-700 hover:text-gray-900" %>
+            <%= link_to "Todos", todos_path, class: "text-sm font-medium text-gray-700 hover:text-gray-900" %>
+          </nav>
+        </div>
+      </div>
+    </header>
+
     <% if flash.any? %>
-      <div id="flash-messages">
+      <!-- Envolvemos também as mensagens flash no limite de largura -->
+      <div class="max-w-4xl mx-auto px-4 mt-4">
         <% flash.each do |type, message| %>
           <div class="flash-<%= type %>">
             <%= message %>
@@ -33,6 +48,10 @@
         <% end %>
       </div>
     <% end %>
-    <%= yield %>
+
+    <!-- Envolvemos o conteúdo principal em um container centralizado e limitado -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <%= yield %>
+    </main>
   </body>
 </html>
